@@ -8,8 +8,20 @@ import {
   FaSun,
   FaMoon,
 } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 
 export default function HomePage() {
+  const {
+    register,
+    watch,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      email: "",
+    },
+  });
+  const email = watch("email");
   const [isDark, setIsDark] = useState(false);
   return (
     <div className={isDark ? "dark bg-black" : "bg-white"}>
@@ -37,7 +49,7 @@ export default function HomePage() {
             height="39"
             className="w-24 lg:w-[230px]"
           />
-          <button className="text-Fm-Pink ring-Fm-Pink dark:text-Fm-Very-Pale-Blue ml-auto h-6 w-20 rounded-full text-[0.63rem] ring-1 lg:h-10 lg:w-44 lg:text-lg">
+          <button className="text-Fm-Pink ring-Fm-Pink dark:text-Fm-Very-Pale-Blue ml-auto h-6 w-20 rounded-full text-[0.63rem] ring-1 hover:opacity-50 lg:h-10 lg:w-44 lg:text-lg">
             Try It Free
           </button>
         </header>
@@ -51,7 +63,7 @@ export default function HomePage() {
             but so does your audience. Create connections with your users as you
             engage in genuine discussion.
           </p>
-          <button className="bg-Fm-Pink text-Fm-Very-Pale-Blue mt-5 h-10 w-[200px] rounded-full font-mono text-xs capitalize lg:h-20 lg:w-[400px] lg:text-2xl">
+          <button className="bg-Fm-Pink text-Fm-Very-Pale-Blue mt-5 h-10 w-[200px] rounded-full font-mono text-xs capitalize hover:opacity-50 lg:h-20 lg:w-[400px] lg:text-2xl">
             get started for free
           </button>
         </article>
@@ -209,7 +221,7 @@ export default function HomePage() {
           <h1 className="text-Fm-Very-Dark-Cyan dark:text-Fm-Very-Pale-Blue mx-5 text-center font-mono text-2xl capitalize lg:text-5xl">
             ready to build your community?
           </h1>
-          <button className="bg-Fm-Pink dark:text-Fm-Very-Pale-Blue text-Fm-Very-Pale-Blue mt-5 h-10 w-[200px] rounded-full font-mono text-xs capitalize lg:h-20 lg:w-[410px] lg:text-2xl">
+          <button className="bg-Fm-Pink dark:text-Fm-Very-Pale-Blue text-Fm-Very-Pale-Blue mt-5 h-10 w-[200px] rounded-full font-mono text-xs capitalize hover:opacity-50 lg:h-20 lg:w-[410px] lg:text-2xl">
             get started for free
           </button>
         </aside>
@@ -235,19 +247,35 @@ export default function HomePage() {
               weekly newsletter. We&apos;ll never send you spam or pass on your
               email address
             </p>
-            <div className="flex flex-col lg:max-w-fit lg:flex-row lg:gap-10">
+            <form
+              className="relative flex flex-col lg:max-w-fit lg:flex-row lg:gap-10"
+              onSubmit={handleSubmit(console.log)}
+            >
               <label htmlFor="email">
                 <input
                   type="email"
                   id="email"
-                  placeholder=""
-                  className="mt-12 h-12 w-full rounded-md lg:h-12 lg:w-[320px]"
+                  value={email}
+                  {...register("email", {
+                    required: "email is required",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Check your email please",
+                    },
+                  })}
+                  className="text-Fm-Very-Dark-Cyan mt-12 h-12 w-full rounded-md lg:h-12 lg:w-[320px]"
                 />
               </label>
-              <button className="bg-Fm-Pink mt-4 h-12 w-40 shrink-0 self-end rounded-md font-bold capitalize">
-                subscribe
-              </button>
-            </div>
+              <input
+                type="submit"
+                className="bg-Fm-Pink text-Fm-Very-Dark-Cyan mt-4 h-12 w-40 shrink-0 self-end rounded-md font-bold capitalize hover:opacity-50"
+              />
+              {errors.email && (
+                <p className="absolute -bottom-3 translate-y-full capitalize text-red-500">
+                  {errors.email.message}
+                </p>
+              )}
+            </form>
           </div>
           <div className="mt-28 lg:mr-24 lg:mt-0 lg:max-w-xl">
             <Image
@@ -278,9 +306,9 @@ export default function HomePage() {
               example@huddle.com
             </p>
             <div className="mt-12 flex items-center gap-4">
-              <FaFacebook className="h-7 w-7" />
-              <FaInstagram className="h-7 w-7" />
-              <FaTwitter className="h-7 w-7" />
+              <FaFacebook className="h-7 w-7 hover:cursor-pointer hover:fill-blue-500" />
+              <FaInstagram className="h-7 w-7 hover:cursor-pointer hover:fill-orange-700" />
+              <FaTwitter className="h-7 w-7 hover:cursor-pointer hover:fill-blue-500" />
             </div>
           </div>
         </footer>
