@@ -1,10 +1,17 @@
 import "~/styles/globals.css";
 
-import { Inter } from "next/font/google";
+import { Poppins, Open_Sans } from "next/font/google";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-poppins",
+  weight: "700",
+});
+
+const open_sans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-open-sans",
+  weight: ["400", "600", "700"],
 });
 
 export const metadata = {
@@ -20,7 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+      <body className={`font-sans ${poppins.variable} ${open_sans.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
