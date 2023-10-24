@@ -94,7 +94,20 @@ export default function HomePage() {
             </p>
           </div>
         </article>
-        <article className="mt-48 flex flex-col items-center justify-center">
+        <article className="bg-Fm-Very-Pale-Blue relative mt-28 flex flex-col items-center justify-center pb-16 pt-24">
+          <picture>
+            <source
+              srcSet="/images/bg-section-top-desktop-1.svg"
+              media="(min-width: 1024px)"
+            />
+            <Image
+              src={"/images/bg-section-top-mobile-1.svg"}
+              alt="bg-footer"
+              width="375"
+              height="53"
+              className="absolute left-0 top-0 -translate-y-full transform"
+            />
+          </picture>
           <Image
             src={"/images/illustration-grow-together.svg"}
             alt="illustration"
@@ -102,16 +115,29 @@ export default function HomePage() {
             height="838"
             className="mx-auto w-[250px]"
           />
-          <h2 className="text-Fm-Very-Dark-Cyan dark:text-Fm-Very-Pale-Blue mb-4 mt-[86px] font-mono text-xl font-bold capitalize">
+          <h2 className="text-Fm-Very-Dark-Cyan mb-4 mt-[86px] font-mono text-xl font-bold capitalize">
             grow together
           </h2>
-          <p className="text-Fm-Very-Dark-Cyan dark:text-Fm-Very-Pale-Blue mx-5 text-center text-sm font-semibold">
+          <p className="text-Fm-Very-Dark-Cyan mx-5 text-center text-sm font-semibold">
             Generate meaningful discussions with your audience and build a
             strong, loyal community. Think of the insightful conversations you
             miss out on with a feedback form.{" "}
           </p>
+          <picture>
+            <source
+              srcSet="/images/bg-section-bottom-desktop-1.svg"
+              media="(min-width: 1024px)"
+            />
+            <Image
+              src={"/images/bg-section-bottom-mobile-1.svg"}
+              alt="bg-footer"
+              width="375"
+              height="53"
+              className="absolute bottom-0 left-0 translate-y-full transform"
+            />
+          </picture>
         </article>
-        <article className="mt-60 flex flex-col items-center justify-center">
+        <article className="relative mt-60 flex flex-col items-center justify-center">
           <Image
             src={"/images/illustration-flowing-conversation.svg"}
             alt="conversations"
@@ -128,7 +154,20 @@ export default function HomePage() {
             flow.
           </p>
         </article>
-        <article className="mt-60 flex flex-col items-center justify-center">
+        <article className="bg-Fm-Very-Pale-Blue relative mt-60 flex flex-col items-center justify-center pb-24">
+          <picture>
+            <source
+              srcSet="/images/bg-section-top-desktop-2.svg"
+              media="(min-width: 1024px)"
+            />
+            <Image
+              src={"/images/bg-section-top-mobile-2.svg"}
+              alt="bg-footer"
+              width="375"
+              height="53"
+              className="absolute left-0 top-0 -translate-y-full transform"
+            />
+          </picture>
           <Image
             src={"/images/illustration-your-users.svg"}
             alt="users"
@@ -136,16 +175,29 @@ export default function HomePage() {
             height="838"
             className="mx-auto w-[250px]"
           />
-          <h2 className="text-Fm-Very-Dark-Cyan dark:text-Fm-Very-Pale-Blue mb-4 mt-[86px] font-mono text-xl font-bold capitalize">
+          <h2 className="text-Fm-Very-Dark-Cyan mb-4 mt-[86px] font-mono text-xl font-bold capitalize">
             your users
           </h2>
-          <p className="text-Fm-Very-Dark-Cyan dark:text-Fm-Very-Pale-Blue mx-5 text-center text-sm font-semibold">
+          <p className="text-Fm-Very-Dark-Cyan mx-5 text-center text-sm font-semibold">
             It takes no time at all to integrate Huddle with your app&apos;s
             authentication solution. This means, once signed in to your app,
             your users can start chatting immediately.
           </p>
+          <picture>
+            <source
+              srcSet="/images/bg-section-bottom-desktop-2.svg"
+              media="(min-width: 1024px)"
+            />
+            <Image
+              src={"/images/bg-section-bottom-mobile-2.svg"}
+              alt="bg-footer"
+              width="375"
+              height="53"
+              className="absolute bottom-0 left-0 translate-y-full transform"
+            />
+          </picture>
         </article>
-        <aside className="mt-72 flex flex-col items-center justify-center space-y-12">
+        <aside className="mt-44 flex flex-col items-center justify-center space-y-12">
           <h1 className="text-Fm-Very-Dark-Cyan dark:text-Fm-Very-Pale-Blue mx-5 text-center font-mono text-2xl capitalize">
             ready to build your community?
           </h1>
@@ -153,7 +205,20 @@ export default function HomePage() {
             get started for free
           </button>
         </aside>
-        <footer className="bg-Fm-Very-Dark-Cyan text-Fm-Very-Pale-Blue mt-64 flex flex-col px-6 pb-11 pt-24">
+        <footer className="bg-Fm-Very-Dark-Cyan text-Fm-Very-Pale-Blue relative mt-64 flex flex-col px-6 pb-11 pt-24">
+          <picture>
+            <source
+              srcSet="/images/bg-footer-top-desktop.svg"
+              media="(min-width: 1024px)"
+            />
+            <Image
+              src={"/images/bg-footer-top-mobile.svg"}
+              alt="bg-footer"
+              width="375"
+              height="53"
+              className="absolute left-0 top-0 -translate-y-full transform"
+            />
+          </picture>
           <h3 className="text-xl font-bold uppercase">newsletter</h3>
           <p className="mr-4 mt-4 text-sm font-semibold">
             {" "}
