@@ -13,6 +13,6 @@ The user can:
 
 ## 1440px
 
-![desktop](<./public/screenshots/huddle-landing-page-with-curved-sections-three.vercel.app_ (1).png>)
+![desktop](<./public/screenshots/huddle-landing-page-with-curved-sections-three.vercel.app_(1).png>)
 
-![desktop dark](<./public/screenshots/huddle-landing-page-with-curved-sections-three.vercel.app_ (2).png>)
+![desktop dark](<./public/screenshots/huddle-landing-page-with-curved-sections-three.vercel.app_(2).png>)
